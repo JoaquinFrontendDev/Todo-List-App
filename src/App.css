@@ -1,0 +1,309 @@
+/*--------------Main Form CSS-------------------*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  margin: auto;
+  min-height: 100vh;
+  min-width: 100%;
+}
+header h1 {
+  font-size: 4rem;
+}
+
+header,
+form {
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+form input,
+form button {
+  padding: 0.5rem;
+  font-size: 1.8rem;
+  width: 60px;
+  border: none;
+  outline: none;
+  background: #fff;
+}
+
+form input::placeholder {
+  font-size: 1.2rem;
+}
+
+div.todo {
+  width: 80%;
+  font-size: 1.2rem;
+}
+
+form button {
+  color: #ff6f47;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+form button:hover {
+  background: #ff6f47;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+div.input {
+  height: 100%;
+  width: 600px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+div.clear-all,
+div.back-up {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 51px;
+  gap: 12px;
+  font-size: 1.2rem;
+  background: #fff;
+  color: #ff6f47;
+  padding-left: 12px;
+}
+
+input.todo-input,
+button.todo-button,
+select.todos.filter-todo,
+div.clear-all,
+div.back-up {
+  height: 60px;
+}
+
+input.todo-input {
+  height: 60px;
+  width: 500px;
+}
+
+div.clear-all,
+div.back-up {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+
+button.button.todo-clear {
+  margin-right: 0;
+}
+
+div.clear-undo {
+  display: flex;
+  gap: 1rem;
+}
+
+/*--------------Todo List CSS-------------------*/
+
+div.todo-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+ul.todo-list {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.todo {
+  margin: 0.5rem;
+  background: #fff;
+  font-size: 1.5rem;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 3px solid red;
+}
+.filter-todo {
+  padding: 1rem;
+}
+.todo li {
+  flex: 1;
+}
+
+.trash-btn,
+.complete-btn,
+.uncompleted-btn {
+  background: #ff6f47;
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.complete-btn {
+  background: rgb(11, 212, 162);
+}
+.uncompleted-btn {
+  background: #aaa;
+}
+
+.todo-item {
+  padding: 0rem 0.5rem;
+}
+
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+}
+
+.fall {
+  transform: translateY(10rem) rotateZ(20deg);
+  opacity: 0;
+}
+.completed-li {
+  opacity: 0.5;
+}
+.completed-todo {
+  border-left: 3px solid rgb(11, 212, 162);
+}
+
+/*CUSTOM SELECTOR */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background-image: none;
+}
+
+/* Custom Select */
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+select {
+  color: #ff6f47;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  appearance: none;
+  cursor: pointer;
+  height: 100%;
+  width: 15rem;
+}
+/* Arrow */
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  padding: 1rem;
+  background: #ff6f47;
+  cursor: pointer;
+  pointer-events: none;
+}
+/* Transition */
+/*
+.select:hover::after {
+  transform: scale(1.5);
+}
+*/
+
+@media screen and (max-width: 900px) {
+  div.container {
+    margin: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  div.input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 1.5rem;
+  }
+
+  input.todo-input {
+    width: 75%;
+  }
+
+  header {
+    width: 100%;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 4rem;
+  }
+
+  form > div,
+  form > select {
+    margin-bottom: 2rem;
+  }
+
+  select {
+    background: #fff;
+    font-size: 1.1rem;
+    font-weight: normal;
+  }
+
+  form {
+    width: 100%;
+    flex-direction: column;
+    margin: 0.2rem auto;
+    gap: 1.2rem;
+    overflow: hidden;
+  }
+
+  ul.todo-list {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0;
+  }
+
+  li.todo-item {
+    font-size: 1rem;
+  }
+
+  div.clear-all,
+  div.back-up {
+    width: 160px;
+    font-size: 1.1rem;
+  }
+
+  div.todo,
+  button.complete-btn,
+  button.uncompleted-btn,
+  button.trash-btn {
+    height: 60px;
+  }
+}
