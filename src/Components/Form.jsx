@@ -62,6 +62,7 @@ const Form = ({
 					swal({
 						text: 'Todas las tareas fueron eliminadas exitosamente',
 						icon: 'success',
+						// eslint-disable-next-line no-sequences
 					}),
 					setBackUpTodos(todos),
 					setTodos([])
@@ -84,6 +85,7 @@ const Form = ({
 
 	useEffect(() => {
 		setBackUpTodos(todos)
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [todos])
 
 	//AND FINALLY WE RETURN A FORM
