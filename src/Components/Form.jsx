@@ -89,51 +89,57 @@ const Form = ({
 	//AND FINALLY WE RETURN A FORM
 
 	return (
-		<form>
-			<div className='input'>
-				<input
-					value={inputText}
-					placeholder='Type something...'
-					onChange={inputTextHandler}
-					type='text'
-					className='todo-input'
-				/>
-				<button
-					onClick={submitTodoHandler}
-					type='submit'
-					className='todo-button'>
-					<i className='fas fa-plus-square'></i>
-				</button>
-			</div>
+		<div className='main-container'>
+			<header className='main-header'>
+				<h1>Task Time</h1>
+			</header>
+			<form className='form-container'>
+				<div className='text-input'>
+					<input
+						value={inputText}
+						placeholder='Type something...'
+						onChange={inputTextHandler}
+						type='text'
+						className='todo-input'
+						maxLength='30'
+					/>
+					<button
+						onClick={submitTodoHandler}
+						type='submit'
+						className='todo-button'>
+						<i className='fas fa-plus'></i>
+					</button>
+				</div>
 
-			<div className='select'>
-				<select onChange={statusHandler} className='todos filter-todo'>
-					<option value='all'>All</option>
-					<option value='completed'>Completed</option>
-					<option value='uncompleted'>Uncompleted</option>
-				</select>
-			</div>
-			<div className='clear-undo'>
-				<div className='clear-all'>
-					<label>Clear All</label>
-					<button
-						onClick={handleClear}
-						type='submit'
-						className='todo-button clear'>
-						<i className='fas fa-times'></i>
-					</button>
+				<div className='filter-select'>
+					<select onChange={statusHandler} className='todos filter-todo'>
+						<option value='all'>All</option>
+						<option value='completed'>Completed</option>
+						<option value='uncompleted'>Uncompleted</option>
+					</select>
 				</div>
-				<div className='back-up'>
-					<label>Undo</label>
-					<button
-						onClick={getBackUpTodos}
-						type='submit'
-						className='todo-button clear'>
-						<i className='fas fa-undo'></i>
-					</button>
+				<div className='clear-undo'>
+					<div className='clear-all'>
+						<label>Clear All</label>
+						<button
+							onClick={handleClear}
+							type='submit'
+							className='button-cu clear'>
+							<i className='fas fa-times'></i>
+						</button>
+					</div>
+					<div className='back-up'>
+						<label>Undo</label>
+						<button
+							onClick={getBackUpTodos}
+							type='submit'
+							className='button-cu clear'>
+							<i className='fas fa-undo'></i>
+						</button>
+					</div>
 				</div>
-			</div>
-		</form>
+			</form>
+		</div>
 	)
 }
 

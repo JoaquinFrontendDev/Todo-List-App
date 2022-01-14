@@ -1,309 +1,231 @@
 /*--------------Main Form CSS-------------------*/
+root {
+	--white-color: #fff;
+	--orange-color: #ff6f47;
+	--black-color: #070707;
+}
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 body {
-  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
-  background-position: center;
-  background-size: cover;
-  color: #fff;
-  font-family: "Poppins", sans-serif;
-  margin: auto;
-  min-height: 100vh;
-  min-width: 100%;
-}
-header h1 {
-  font-size: 4rem;
-}
-
-header,
-form {
-  width: 100%;
-  min-height: 100px;
-  display: flex;
-  gap: 3rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem 0;
+	background-image: url('./assets/pexels-content-pixie-2736499.jpg');
+	background-position: center;
+	background-size: cover;
+	background-blend-mode: normal;
+	backdrop-filter: blur(5px);
+	color: var(--white-color);
+	font-family: 'Poppins', sans-serif;
+	margin: auto;
+	height: 100%;
+	min-height: 100vh;
+	max-width: 100%;
+	width: 100%;
 }
 
-form input,
-form button {
-  padding: 0.5rem;
-  font-size: 1.8rem;
-  width: 60px;
-  border: none;
-  outline: none;
-  background: #fff;
+header.main-header {
+	width: 100%;
+	height: 30%;
+	text-align: center;
 }
 
-form input::placeholder {
-  font-size: 1.2rem;
+.main-header h1 {
+	font-size: 4rem;
+	padding: 1em;
 }
 
-div.todo {
-  width: 80%;
-  font-size: 1.2rem;
+.main-container {
+	height: 100%;
 }
 
-form button {
-  color: #ff6f47;
-  background: #fff;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-form button:hover {
-  background: #ff6f47;
-  color: #fff;
-  transition: all 0.3s ease;
+form.form-container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 2em;
+	flex-wrap: wrap;
 }
 
-div.input {
-  height: 100%;
-  width: 600px;
-  display: flex;
-  justify-content: flex-end;
+.text-input {
+	position: relative;
 }
 
-div.clear-all,
-div.back-up {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 51px;
-  gap: 12px;
-  font-size: 1.2rem;
-  background: #fff;
-  color: #ff6f47;
-  padding-left: 12px;
+.text-input input {
+	height: 50px;
+	width: clamp(350px, 400px, 500px);
+	border: none;
+	border-radius: 10px;
+	padding: 1em;
+	outline: none;
 }
 
-input.todo-input,
-button.todo-button,
-select.todos.filter-todo,
-div.clear-all,
-div.back-up {
-  height: 60px;
+.text-input input::placeholder {
+	font-size: 22px;
 }
 
-input.todo-input {
-  height: 60px;
-  width: 500px;
+.todo-button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 50px;
+	border: none;
+	border-radius: 0 10px 10px 0;
+	background-color: #0651dd7c;
 }
 
-div.clear-all,
-div.back-up {
-  width: 200px;
-  display: flex;
-  justify-content: space-between;
+.clear-undo {
+	display: flex;
+	height: 100%;
+	gap: 2em;
 }
 
-button.button.todo-clear {
-  margin-right: 0;
+div.filter-select {
+	position: relative;
+	height: 50px;
+	width: 300px;
 }
 
-div.clear-undo {
-  display: flex;
-  gap: 1rem;
+.filter-select select {
+	height: 100%;
+	width: 100%;
+	border: none;
+	border-radius: 10px;
+	padding: 0 1em;
+	outline: none;
+	font-size: 20px;
 }
 
-/*--------------Todo List CSS-------------------*/
-
-div.todo-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
+.filter-select i {
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 100%;
 }
 
-ul.todo-list {
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
+.button-cu {
+	height: 100%;
+	width: 50px;
+	border: none;
+	border-radius: 0 10px 10px 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: #0651dd7c;
 }
 
-.todo {
-  margin: 0.5rem;
-  background: #fff;
-  font-size: 1.5rem;
-  color: black;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-left: 3px solid red;
-}
-.filter-todo {
-  padding: 1rem;
-}
-.todo li {
-  flex: 1;
+.back-up,
+.clear-all {
+	height: 50px;
+	width: 150px;
+	display: flex;
+	gap: 6px;
+	justify-content: flex-start;
+	align-items: center;
+	background-color: #fff;
+	position: relative;
+	border-radius: 10px;
 }
 
-.trash-btn,
-.complete-btn,
-.uncompleted-btn {
-  background: #ff6f47;
-  color: #fff;
-  border: none;
-  padding: 1rem;
-  cursor: pointer;
-  font-size: 1rem;
+.back-up label,
+.clear-all label {
+	padding: 0 12px;
+	float: left;
 }
-.complete-btn {
-  background: rgb(11, 212, 162);
+
+.todo-container {
+	width: 100%;
+	max-width: 100vw;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 6em;
 }
-.uncompleted-btn {
-  background: #aaa;
+
+.todo-list {
+	list-style: none;
+	font-size: 16px;
+	width: 800px;
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+}
+
+.todo-box {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #fff;
+	border-radius: 10px;
+	position: relative;
+	border-left: 4px solid gray;
+}
+
+.completed-todo {
+	border-color: rgb(51, 161, 51);
 }
 
 .todo-item {
-  padding: 0rem 0.5rem;
+	width: 100%;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	padding: 1em;
 }
 
-.fa-trash,
-.fa-check {
-  pointer-events: none;
-}
-
-.fall {
-  transform: translateY(10rem) rotateZ(20deg);
-  opacity: 0;
-}
 .completed-li {
-  opacity: 0.5;
-}
-.completed-todo {
-  border-left: 3px solid rgb(11, 212, 162);
+	text-decoration: line-through;
 }
 
-/*CUSTOM SELECTOR */
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
-  outline: 0;
-  box-shadow: none;
-  border: 0 !important;
-  background-image: none;
+.todo-buttons {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	display: flex;
 }
 
-/* Custom Select */
-.select {
-  margin: 1rem;
-  position: relative;
-  overflow: hidden;
+.complete-btn,
+.uncomplete-btn,
+.trash-btn {
+	height: 100%;
+	width: 50px;
+	border: none;
+	outline: none;
 }
-select {
-  color: #ff6f47;
-  font-family: "Poppins", sans-serif;
-  font-size: 1.2rem;
-  font-weight: bold;
-  appearance: none;
-  cursor: pointer;
-  height: 100%;
-  width: 15rem;
+
+.trash-btn {
+	border-radius: 0 10px 10px 0;
+	background-color: rgba(218, 28, 28, 0.904);
 }
-/* Arrow */
-.select::after {
-  content: "\25BC";
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  padding: 1rem;
-  background: #ff6f47;
-  cursor: pointer;
-  pointer-events: none;
+
+.complete-btn,
+.uncomplete-btn {
+	border-radius: 10px 0 0 10px;
 }
-/* Transition */
-/*
-.select:hover::after {
-  transform: scale(1.5);
+
+.complete-btn {
+	background-color: rgb(51, 161, 51);
 }
-*/
 
-@media screen and (max-width: 900px) {
-  div.container {
-    margin: auto;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.uncomplete-btn {
+	background-color: rgba(82, 82, 82, 0.37);
+}
 
-  div.input {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    font-size: 1.5rem;
-  }
+button:active {
+	transform: scale(0.9);
+}
 
-  input.todo-input {
-    width: 75%;
-  }
-
-  header {
-    width: 100%;
-    padding: 2rem;
-    text-align: center;
-  }
-
-  header h1 {
-    font-size: 4rem;
-  }
-
-  form > div,
-  form > select {
-    margin-bottom: 2rem;
-  }
-
-  select {
-    background: #fff;
-    font-size: 1.1rem;
-    font-weight: normal;
-  }
-
-  form {
-    width: 100%;
-    flex-direction: column;
-    margin: 0.2rem auto;
-    gap: 1.2rem;
-    overflow: hidden;
-  }
-
-  ul.todo-list {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 0;
-  }
-
-  li.todo-item {
-    font-size: 1rem;
-  }
-
-  div.clear-all,
-  div.back-up {
-    width: 160px;
-    font-size: 1.1rem;
-  }
-
-  div.todo,
-  button.complete-btn,
-  button.uncompleted-btn,
-  button.trash-btn {
-    height: 60px;
-  }
+@media screen and (max-width: 850px) {
+	.todo-list {
+		width: 90%;
+	}
 }
